@@ -1,11 +1,11 @@
-# Numerical Analysis Methods 📊
+# Numerical Analysis Methods
 
 A collection of numerical analysis algorithms implemented in Python, based on topics taught in class.  
 This repository serves both as a study resource and a reference for common computational methods used to approximate solutions for mathematical problems.
 
 ---
 
-## 📚 Overview
+## Overview
 
 Numerical analysis focuses on designing algorithms for approximating solutions to problems that cannot be solved analytically or are too complex for exact computation.  
 This repository contains clean, well-documented implementations of these methods along with example usages.
@@ -16,12 +16,12 @@ The goal of this project is:
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 
 ---
 
-## 🛠️ Implemented Methods
+## Implemented Methods
 
 - **Root Finding**
   - [x] Bisection Method
@@ -41,7 +41,7 @@ The goal of this project is:
 
 ---
 
-## 📌 Example Usage
+## Example Usage
 
 ### Bisection Method
 ```python
