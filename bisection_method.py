@@ -53,7 +53,13 @@ if __name__ == "__main__":
     # For example
     def f(x):
         return x**2 - 4
-        
+
+    a = float(input("Enter the value of a: "))
+    b = float(input("Enter the value of b: "))
+    hor_tol = float(input("Enter the horizontal tolerance: "))
+    ver_tol = float(input("Enter the vertical tolerance: "))
+    max_iter = int(input("Enter the maximum number of iterations: "))
+
     '''Pick a, b such that f(a), f(b) has opposite signs -> f(a)*f(b) < 0'''
-    root = bisection_method(f, a = 3, b= 1, hor_tol=1e-5, ver_tol=1e-5, max_iter=100)
+    root = bisection_method(f, a = a, b = b, hor_tol = hor_tol, ver_tol = ver_tol, max_iter = max_iter)
     print("Root for f(x) is = ",root())
