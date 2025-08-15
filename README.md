@@ -16,11 +16,6 @@ The goal of this project is:
 
 ---
 
-## Repository Structure
-
-
----
-
 ## Implemented Methods
 
 - **Roots of Non-Linear Eqns**
