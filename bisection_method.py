@@ -9,57 +9,32 @@ class bisection_method:
         else: return 0
 
     def __call__(self):
-
-        '''Bisection method to find the root of a function in the interval [a, b].
-        
-        Parameters:
-        func : callable
-            The function for which we want to find the root.
-        a : float
-            The start of the interval.
-        b : float
-            The end of the interval.
-
-        f(a) ,f(b) must have opposite signs.
-            
-        her_tol : float
-            The tolerance for convergence on x axis.
-        ver_tol : float
-            The tolerance for convergence on y axis.
-        max_iter : int
-            The maximum number of iterations.
-        
-        Returns:
-        float
-            The estimated root of the function.'''
-        
         u, v, e = self.func(self.a), self.func(self.b), self.b - self.a
-        # print(a,b,u,v)
 
         for k in range(self.max_iter-1):
+            if self.sign(u * v)>0:
+                print("Choose a and b such that f(a)*f(b) < 0")
+                return
             e, c= e/2, self.a+e
             w = self.func(c)
-            # print(k,c,w,e)
             
             if abs(e) < self.hor_tol or abs(w) < self.ver_tol: 
-                return (self.a+self.b)/2
+                return c
 
             if self.sign(w) != self.sign(v): a, u = c, w
             else: b, v = c, w
+        print("No root found.")
+        return None
 
 if __name__ == "__main__":
-
-    '''define a function to find the root'''
-    # For example
+    import numpy as np
+    '''
+    * function should have a real root.
+    * f(a) * f(b) < 0
+    > error convergence en+1 = en ** 1
+    '''
     def f(x):
-        return x**2 - 4
+        return np.sin(x)**2-4
 
-    a = float(input("Enter the value of a: "))
-    b = float(input("Enter the value of b: "))
-    hor_tol = float(input("Enter the horizontal tolerance: "))
-    ver_tol = float(input("Enter the vertical tolerance: "))
-    max_iter = int(input("Enter the maximum number of iterations: "))
-
-    '''Pick a, b such that f(a), f(b) has opposite signs -> f(a)*f(b) < 0'''
-    root = bisection_method(f, a = a, b = b, hor_tol = hor_tol, ver_tol = ver_tol, max_iter = max_iter)
-    print("Root for f(x) is = ",root())
+    root = bisection_method(f, a = 0.0, b = 3.0, hor_tol = 1e-5, ver_tol = 1e-5, max_iter = 100)
+    print("Root = ",root())

@@ -1,6 +1,6 @@
 # Numerical Analysis Methods
 
-A collection of numerical analysis algorithms implemented in Python, based on topics taught in class.  
+A collection of numerical analysis algorithms implemented in Python, based on topics taught in Numerical Analysis Course taught at IISER Pune by Prof Prafullkumar Tale.  
 This repository serves both as a study resource and a reference for common computational methods used to approximate solutions for mathematical problems.
 
 ---
@@ -23,10 +23,10 @@ The goal of this project is:
 
 ## Implemented Methods
 
-- **Root Finding**
+- **Roots of Non-Linear Eqns**
   - [x] Bisection Method
-  - [ ] Newton-Raphson Method
-  - [ ] Secant Method
+  - [x] Newton-Raphson Method
+  - [x] Secant Method
 - **Interpolation**
   - [ ] Lagrange Interpolation
   - [ ] Newton’s Divided Difference

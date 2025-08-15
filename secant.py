@@ -10,12 +10,19 @@ class secant:
             if abs(fx2) < self.ver_tol or abs(x2 - x1) < self.hor_tol:
                 return x2
             else: x0, x1 = x1, x2
+        print("No root found.")
+        return None
 
 if __name__ == "__main__":
+    import numpy as np
+    '''
+    * function should have a real root.
+    > error convergence en+1 = en ** golden ratio (1.62) - proove !!
+    '''
     def f(x):
-        return x**2 - 4
+        return np.sin(x)**2-4
     
 
     root_finder = secant(f, 3, 2, 1e-5, 1e-5, 100)
     root = root_finder()
-    print("root= ", root)
+    print("root = ", root)
